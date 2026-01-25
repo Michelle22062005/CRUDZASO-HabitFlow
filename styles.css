@@ -2,8 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+ 
 }
 .task-column{
     min-height: 300px;
+}
+
+.container-index{
+    border-radius: 8px;
+    max-width: 450px;
+    box-shadow:  0 0 8px 2px rgba(116, 114, 114, 0.6);
+}
+.container .cont .btn:hover{
+    background-color: rgb(51, 191, 238);
+}
+
+.form{
+    border: 1px solid rgb(82, 223, 216);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(216, 249, 241);
+    margin-bottom: 5px;
+}
+.container{
+    box-sizing: border-box;
 }

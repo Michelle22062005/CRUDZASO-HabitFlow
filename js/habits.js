@@ -36,6 +36,7 @@ function saveHabit() {
     frequency: document.getElementById('habitFrequency').value,
     priority: document.getElementById('habitPriority').value,
     status: document.getElementById('habitStatus').value
+    
   };
 
   
@@ -75,7 +76,7 @@ function showHabits() {
 
     habitContainer.innerHTML = `
                         
-                            <div class="card-body " data-status="${habit.status.toLowerCase()}">
+                            <div class="card-body col" data-status="${habit.status.toLowerCase()}">
                                 <h5 class="card-title">${habit.title}</h5>
                                 <p class="card-text">Frequency: ${habit.frequency}</p>
                                 <p class="card-text">Priority: ${habit.priority}</p>
@@ -149,3 +150,20 @@ filterButtons.forEach(btn => {
     });
 });
 
+
+//CONTADOR
+document.addEventListener("DOMContentLoaded", () => {
+  updateCounters();
+});
+function updateCounters() {
+  const total = habits.length;
+
+  const pending = habits.filter(h => h.status.trim().toLowerCase() === "pending").length;
+  const progress = habits.filter(h => h.status.trim().toLowerCase()=== "progress").length;
+  const completed = habits.filter(h => h.status.trim().toLowerCase() === "completed").length;
+
+  document.getElementById("count-total").textContent = total;
+  document.getElementById("count-pending").textContent = pending;
+  document.getElementById("count-progress").textContent = progress;
+  document.getElementById("count-completed").textContent = completed;
+}
