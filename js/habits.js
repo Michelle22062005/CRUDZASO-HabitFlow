@@ -70,12 +70,11 @@ function showHabits() {
 
   habits.forEach((habit, index) => {
     const habitContainer = document.createElement('div');
-    habitContainer.className = "card";
     habitContainer.style.width = "18rem";
     habitContainer.style.margin = "10px";
 
     habitContainer.innerHTML = `
-                        
+                          <div class="card m-2" style="width: 18rem;">
                             <div class="card-body col" data-status="${habit.status.toLowerCase()}">
                                 <h5 class="card-title">${habit.title}</h5>
                                 <p class="card-text">Frequency: ${habit.frequency}</p>
@@ -85,7 +84,7 @@ function showHabits() {
                                 <button type="button" class="btn btn-outline-primary edit-btn">Edit</button>
                                 <button type="button" class="btn btn-outline-danger delete-btn">Delete</button>
                             </div>
-                            
+                          </div>  
     `;
     habitContainer
       .querySelector(".delete-btn")
@@ -159,7 +158,7 @@ function updateCounters() {
   const total = habits.length;
 
   const pending = habits.filter(h => h.status.trim().toLowerCase() === "pending").length;
-  const progress = habits.filter(h => h.status.trim().toLowerCase()=== "progress").length;
+  const progress = habits.filter(h => h.status.trim().toLowerCase()=== "in progress").length;
   const completed = habits.filter(h => h.status.trim().toLowerCase() === "completed").length;
 
   document.getElementById("count-total").textContent = total;
